@@ -10,11 +10,10 @@ struct node
 
 */
 
-
-void postOrder(node *root) {
+void inOrder(node *root) {
   if(root!=NULL){
-    postOrder(root->left);
-    postOrder(root->right);
+    inOrder(root->left);
     cout << root->data << " ";
+    inOrder(root->right);
   }
 }
