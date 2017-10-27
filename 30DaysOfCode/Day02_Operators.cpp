@@ -3,8 +3,6 @@
 using namespace std;
 
 int main(){
-  cout << "day 2" << endl;
-
   string tmp;
   double mealCost;
   int tipPercent, taxPercent;
@@ -20,8 +18,7 @@ int main(){
   double tax = mealCost * taxPercent / 100;
   int totalCost = (int) round(mealCost + tip + tax);
 
-  cout << "The total meal cost is " << totalCost << " dollars" <<endl;
+  cout << "The total meal cost is " << totalCost << " dollars." <<endl;
 
   return 0;
-
 }
