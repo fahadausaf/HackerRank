@@ -2,16 +2,13 @@
 using namespace std;
 
 int main(){
-  int i;
-  long l;
+  int a;
+  long b;
   char c;
-  float f;
-  double d;
-
-  cin >> i >> l >> c >> f >> d;
-  //cin >> l;
-
-  cout << i << "\n" << l << "\n" << c << "\n" << f << "\n" << d << endl;
+  float d;
+  double e;
+  scanf("%d %ld %c %f %lf", &a, &b, &c, &d, &e);
+  printf("%d\n%ld\n%c\n%f\n%lf", a, b, c, d, e);
 
   return 0;
 }

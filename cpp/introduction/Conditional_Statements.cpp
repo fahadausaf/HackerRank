@@ -2,8 +2,6 @@
 using namespace std;
 
 int main(){
-  cout << "Conditional Statements" << endl;
-
   int n;
   cin >> n;
   switch (n) {
