@@ -4,8 +4,6 @@
 using namespace std;
 
 int main(){
-  cout << "Arrays" << endl;
-
   int n;
   cin >> n;
   vector<int> arr(n);
