@@ -8,23 +8,20 @@
      struct Node *next;
   }
 */
+
 Node* Insert(Node *head,int data)
 {
-    Node* newNode = new Node;
-    newNode->data = data;
-    newNode->next = NULL;
+  Node* n = new Node;
+  n->data = data;
+  n->next = NULL;
 
-    if (head == NULL) {
-        return newNode;
-    }
+  if(head==NULL)
+    return n;
 
-    Node* temp = head;
-
-    while(temp->next != NULL){
-        temp = temp->next;
-    }
-
-    temp->next = newNode;
-
-    return head;
+  Node* current = head;
+  while(current->next != NULL){
+    current = current->next;
+  }
+  current->next = n;
+  return head;
 }

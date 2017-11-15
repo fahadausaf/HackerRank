@@ -6,6 +6,23 @@ struct Node{
   struct Node *next;
 };
 
+Node* Insert(Node *head,int data)
+{
+  Node* n = new Node;
+  n->data = data;
+  n->next = NULL;
+
+  if(head==NULL)
+    return n;
+
+  Node* current = head;
+  while(current->next != NULL){
+    current = current->next;
+  }
+  current->next = n;
+  return head;
+}
+
 void Print(Node *head)
 {
   while(head != NULL){
@@ -33,5 +50,6 @@ Node* CreateLinkedList(){
 
 int main(){
   cout << "Linked List" << endl;
-  Print(CreateLinkedList());
+  //Print(CreateLinkedList());
+  Print(Insert(CreateLinkedList(),55));
 }
