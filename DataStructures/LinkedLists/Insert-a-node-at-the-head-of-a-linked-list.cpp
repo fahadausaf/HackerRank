@@ -9,16 +9,14 @@
   }
 return back the pointer to the head of the linked list in the below method.
 */
-Node* Insert(Node *head,int data)
-{
-    Node* newNode = new Node;
-    newNode->data = data;
-    newNode->next = NULL;
+Node* Insert(Node* head, int data){
+  Node* n = new Node;
+  n->data = data;
+  n->next = NULL;
 
-    if (head == NULL) {
-        return newNode;
-    }
+  if(head==NULL)
+    return n;
 
-    newNode->next = head;
-    return newNode;
+  n->next = head;
+  return n;
 }
