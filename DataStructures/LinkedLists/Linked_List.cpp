@@ -6,6 +6,10 @@ struct Node{
   struct Node *next;
 };
 
+Node* InsertNth(Node* head, int data, int position){
+
+}
+
 Node* InsertHead(Node* head, int data){
   Node* n = new Node;
   n->data = data;
