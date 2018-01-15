@@ -4,9 +4,7 @@ using namespace std;
 
 int main(){
   int n, q;
-
-  cin >> n;
-  cin >> q;
+  cin >> n >> q;
 
   vector<vector<int>> vv;
 
@@ -24,8 +22,7 @@ int main(){
 
   for(int i=0; i<q; i++){
     int index, k;
-    cin >> index;
-    cin >> k;
+    cin >> index >> k;
     cout << vv[index][k] << endl;
   }
 
