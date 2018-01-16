@@ -15,18 +15,9 @@ int main(){
     }
   }
 
-  /*
-  for(auto x : v)
-  {
-  	for(auto y : x)
-  		cout<<y;
-  	cout << endl;
-  }
-  */
-
   int max = -999;
-  for(int x = 0; x < 4; x++){
-		for(int y = 0; y < 4; y++){
+  for(int x = 0; x <= 3; x++){
+		for(int y = 0; y <= 3; y++){
       n = v[x][y] + v[x][y+1] + v[x][y+2] +
         v[x+1][y+1] +
         v[x+2][y] + v[x+2][y+1] + v[x+2][y+2];
