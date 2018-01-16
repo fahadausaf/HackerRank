@@ -66,7 +66,7 @@ Node* CreateLinkedList(){
 
 int main(){
   cout << "Linked List" << endl;
-  //Print(CreateLinkedList());
+  Print(CreateLinkedList());
   //Print(InsertTail(CreateLinkedList(),55));
-  Print(InsertHead(CreateLinkedList(),55));
+  //Print(InsertHead(CreateLinkedList(),55));
 }
