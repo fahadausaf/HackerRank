@@ -28,6 +28,24 @@ void Print(Node *head){
   }
 }
 
+Node* InsertTail(Node *head,int data)
+{
+  Node *n = new Node;
+  n->data = data;
+  n->next = NULL;
+
+  if(head==NULL)
+    return n;
+
+  Node *c = head;
+  while(c->next !=NULL){
+    c = c->next;
+  }
+  c->next = n;
+
+  return head;
+}
+
 int main(){
   Node *n = createLinkedList();
   Print(n);
