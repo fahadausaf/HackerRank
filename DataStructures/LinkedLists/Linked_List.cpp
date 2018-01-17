@@ -6,8 +6,23 @@ struct Node{
   struct Node *next;
 };
 
-Node* InsertNth(Node* head, int data, int position){
+Node* InsertNth(Node *head, int data, int position)
+{
+  Node *n = new Node;
+  n->data = data;
+  if(position==0){
+    n->next = head;
+    return n;
+  }
 
+  Node *cur = head;
+  for(int i=1; i<position; i++)
+    cur = cur->next;
+
+  n->next = cur->next;
+  cur->next = n;
+
+  return head;
 }
 
 Node* InsertHead(Node* head, int data){
@@ -62,6 +77,37 @@ int CompareLists(Node *headA, Node* headB)
     return 0;
 
   return 1;
+}
+
+Node* MergeLists(Node *headA, Node* headB)
+{
+  if(headA==NULL)
+    return headB;
+  if(headB==NULL)
+    return headA;
+
+  if(headA->data < headB->data){
+    headA->next = MergeLists(headA->next, headB);
+    return headA;
+  }
+  else{
+    headB->next = MergeLists(headA, headB->next);
+    return headB;
+  }
+}
+
+Node* Delete(Node *head, int position)
+{
+  if(position==0)
+    return head->next;
+
+  Node *cur = head;
+  for(int i=1; i<position; i++)
+    cur = cur->next;
+
+  cur->next = cur->next->next;
+
+  return head;
 }
 
 void Print(Node *head)
