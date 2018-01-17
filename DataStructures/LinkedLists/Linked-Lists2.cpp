@@ -74,6 +74,20 @@ Node* InsertNth(Node *head, int data, int position)
   return head;
 }
 
+Node* Delete(Node *head, int position)
+{
+  if(position==0)
+    return head->next;
+
+  Node *cur = head;
+  for(int i=1; i<position; i++)
+    cur = cur->next;
+
+  cur->next = cur->next->next;
+
+  return head;
+}
+
 int main(){
   Node *n = createLinkedList();
   Print(n);
