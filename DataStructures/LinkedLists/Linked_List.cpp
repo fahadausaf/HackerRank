@@ -48,6 +48,22 @@ void ReversePrint(Node *head)
   cout << head->data << endl;
 }
 
+int CompareLists(Node *headA, Node* headB)
+{
+  while(headA!=NULL){
+    if(headA->data != headB->data)
+      return 0;
+
+    headA = headA->next;
+    headB = headB->next;
+  }
+
+  if(headA!=headB)
+    return 0;
+
+  return 1;
+}
+
 void Print(Node *head)
 {
   while(head != NULL){
