@@ -110,6 +110,23 @@ Node* Delete(Node *head, int position)
   return head;
 }
 
+int GetNode(Node *head,int positionFromTail)
+{
+  int nodes = 0;
+
+  Node *i = head;
+  while(i!=NULL){
+    i = i->next;
+    nodes++;
+  }
+
+  nodes -= positionFromTail;
+  while(--nodes){
+    head = head->next;
+  }
+  return head->data;
+}
+
 void Print(Node *head)
 {
   while(head != NULL){
