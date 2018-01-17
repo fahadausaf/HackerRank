@@ -189,6 +189,21 @@ bool has_cycle(Node* head) {
   return false;
 }
 
+int FindMergeNode(Node *headA, Node *headB)
+{
+  Node *n = headA;
+  while(headB!=NULL){
+    headA = n;
+    while(headA!=NULL){
+      if(headA==headB)
+        return headA->data;
+      headA = headA->next;
+    }
+    headB = headB->next;
+  }
+  return -1;
+}
+
 int main(){
   cout << "Linked List" << endl;
   Print(CreateLinkedList());
