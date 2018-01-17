@@ -152,6 +152,23 @@ Node* CreateLinkedList(){
   return head;
 }
 
+Node* RemoveDuplicates(Node *head)
+{
+  if(head==NULL)
+    return NULL;
+
+  Node *n = head;
+
+  while(n->next != NULL){
+    if(n->data == n->next->data)
+      n->next = n->next->next;
+    else
+      n = n->next;
+  }
+
+  return head;
+}
+
 int main(){
   cout << "Linked List" << endl;
   Print(CreateLinkedList());
