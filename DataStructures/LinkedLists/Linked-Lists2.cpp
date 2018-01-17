@@ -46,6 +46,15 @@ Node* InsertTail(Node *head,int data)
   return head;
 }
 
+Node* InsertHead(Node *head,int data)
+{
+  Node *n = new Node;
+  n->data = data;
+  n->next = head;
+
+  return n;
+}
+
 int main(){
   Node *n = createLinkedList();
   Print(n);
