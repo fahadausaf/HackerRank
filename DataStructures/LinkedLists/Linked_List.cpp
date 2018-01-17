@@ -39,6 +39,15 @@ Node* InsertTail(Node *head,int data)
   return head;
 }
 
+void ReversePrint(Node *head)
+{
+  if(head == NULL)
+    return;
+
+  ReversePrint(head->next);
+  cout << head->data << endl;
+}
+
 void Print(Node *head)
 {
   while(head != NULL){
