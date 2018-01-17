@@ -55,6 +55,25 @@ Node* InsertHead(Node *head,int data)
   return n;
 }
 
+Node* InsertNth(Node *head, int data, int position)
+{
+  Node *n = new Node;
+  n->data = data;
+  if(position==0){
+    n->next = head;
+    return n;
+  }
+
+  Node *cur = head;
+  for(int i=1; i<position; i++)
+    cur = cur->next;
+
+  n->next = cur->next;
+  cur->next = n;
+
+  return head;
+}
+
 int main(){
   Node *n = createLinkedList();
   Print(n);
