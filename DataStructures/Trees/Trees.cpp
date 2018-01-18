@@ -54,12 +54,22 @@ void postOrder(node *root) {
   }
 }
 
+void inOrder(node *root) {
+  if(root != NULL){
+    inOrder(root->left);
+    cout << root->data << " ";
+    inOrder(root->right);
+  }
+}
+
 int main(){
   node *root = dummyTree();
   cout << "\nPre-Order: ";
   preOrder(root);
   cout << "\nPost-Order: ";
   postOrder(root);
+  cout << "\nIn-Order: ";
+  inOrder(root);
 
   return 0;
 }
