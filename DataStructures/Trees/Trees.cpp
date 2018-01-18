@@ -35,6 +35,14 @@ node * dummyTree(){
   return n6;
 }
 
+void preOrder(node *root) {
+  if(root != NULL){
+    cout << root->data;
+    preOrder(root->left);
+    preOrder(root->right);
+  }
+}
+
 int main(){
   node *root = dummyTree();
 
