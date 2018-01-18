@@ -260,16 +260,35 @@ Node2* SortedInsert(Node2 *head,int data)
   return head;
 }
 
-int main(){
+Node2* Reverse(Node2* head){
+  while(head != NULL){
+    Node2 *tmp = head->prev;
+    head->prev = head->next;
+    head->next = tmp;
+    if(head->prev != NULL)
+      head = head->prev;
+    else
+      return head;
+  }
+  return head;
+}
+
+void InsertSortedDoublyTest(){
   Node2 *n = SortedInsert(NULL, 2);
-  Print2(n);
-  cout << "\n";
+  //Print2(n);
+  //cout << "\n";
   Node2 *n2 = SortedInsert(n, 1);
-  Print2(n2);
-  cout << "\n";
+  //Print2(n2);
+  //cout << "\n";
   Node2 *n3 = SortedInsert(n2, 4);
-  Print2(n3);
-  cout << "\n";
+  //Print2(n3);
+  //cout << "\n";
   Node2 *n4 = SortedInsert(n3, 3);
   Print2(n4);
+  cout << "\n";
+  Print2(Reverse(n4));
+}
+
+int main(){
+  InsertSortedDoublyTest();
 }
