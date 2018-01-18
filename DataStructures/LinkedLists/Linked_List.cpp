@@ -6,6 +6,12 @@ struct Node{
   struct Node *next;
 };
 
+struct Node2{
+  int data;
+  struct Node2 *next;
+  struct Node2 *prev;
+};
+
 Node* InsertNth(Node *head, int data, int position)
 {
   Node *n = new Node;
@@ -135,6 +141,14 @@ void Print(Node *head)
   }
 }
 
+void Print2(Node2 *head)
+{
+  while(head != NULL){
+    cout << head->data << endl;
+    head = head->next;
+  }
+}
+
 Node* CreateLinkedList(){
   // creates a linked list with 10 nodes
 
@@ -204,9 +218,58 @@ int FindMergeNode(Node *headA, Node *headB)
   return -1;
 }
 
+Node2* SortedInsert(Node2 *head,int data)
+{
+  Node2 *n = new Node2;
+  n->data = data;
+  n->next = NULL;
+  n->prev = NULL;
+
+  if(head==NULL)
+    return n;
+
+  Node2 *curr = head;
+
+  while(curr->data < data && curr ->next !=NULL)
+    curr = curr->next;
+
+  //insert in the end
+  if(curr->data < data && curr->next == NULL){
+    curr->next = n;
+    n->prev = curr;
+    return head;
+  }
+
+  if(curr->data > data){
+    //insert in the beginning
+    if(curr->prev == NULL){
+      curr->prev = n;
+      n->next = curr;
+      head = n;
+    }
+    else{
+      //insert in-between
+      Node2 *tmp = curr->prev;
+      tmp->next = n;
+      n->prev = tmp;
+      n->next = curr;
+      curr->prev = n;
+    }
+  }
+
+  return head;
+}
+
 int main(){
-  cout << "Linked List" << endl;
-  Print(CreateLinkedList());
-  //Print(InsertTail(CreateLinkedList(),55));
-  //Print(InsertHead(CreateLinkedList(),55));
+  Node2 *n = SortedInsert(NULL, 2);
+  Print2(n);
+  cout << "\n";
+  Node2 *n2 = SortedInsert(n, 1);
+  Print2(n2);
+  cout << "\n";
+  Node2 *n3 = SortedInsert(n2, 4);
+  Print2(n3);
+  cout << "\n";
+  Node2 *n4 = SortedInsert(n3, 3);
+  Print2(n4);
 }
