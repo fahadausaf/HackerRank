@@ -77,6 +77,28 @@ int height(Node* root) {
   return 0;
 }
 
+void leftSkew(node* root){
+  if(root != NULL){
+    cout << root->data << " ";
+    leftSkew(root->left);
+  }
+}
+
+void rightSkew(node* root){
+  if(root != NULL){
+    cout << root->data << " ";
+    rightSkew(root->right);
+  }
+}
+
+void topView(node* root){
+  if(root != NULL){
+    cout << root->data << " ";
+    leftSkew(root->left);
+    rightSkew(root->right);
+  }
+}
+
 int main(){
   node *root = dummyTree();
   cout << "\nPre-Order: ";
