@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 struct node
@@ -77,27 +78,45 @@ int height(Node* root) {
   return 0;
 }
 
-void leftSkew(node* root){
-  if(root != NULL){
-    cout << root->data << " ";
+void leftSkew(node *root){
+  if(root!=NULL){
     leftSkew(root->left);
+    cout << root->data << " ";
   }
 }
 
-void rightSkew(node* root){
-  if(root != NULL){
+void rightSkew(node *root){
+  if(root!=NULL){
     cout << root->data << " ";
     rightSkew(root->right);
   }
 }
 
-void topView(node* root){
-  if(root != NULL){
-    cout << root->data << " ";
+void topView(node *root)
+{
+  if(root!=NULL){
     leftSkew(root->left);
+    cout << root->data << " ";
     rightSkew(root->right);
   }
 }
+
+void levelOrder(node * root) {
+  if(root != NULL){
+    queue <struct node *> q;
+    q.push(root);
+    while(!q.empty()){
+      node *n = q.front();
+      q.pop();
+      cout << n->data << " ";
+      if(n->left != NULL)
+        q.push(n->left);
+      if(n->right != NULL)
+        q.push(n->right);
+    }
+  }
+}
+ 
 
 int main(){
   node *root = dummyTree();
