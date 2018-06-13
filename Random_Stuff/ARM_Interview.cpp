@@ -22,8 +22,8 @@ its own line.
 using namespace std;
 
 int main(){
-  string str = "7;0,1,2,3,1,4,5";
-  //cin << str;
+  string str;
+  cin << str;
   stringstream ss(str);
   int n,x;
   ss >> n;
@@ -35,8 +35,8 @@ int main(){
     v.push_back(x);
   }
 
-  for(int x=0; x<i; x++){
-    for(int y=x+1; y<i; y++){
+  for(int x=0; x<n; x++){
+    for(int y=x+1; y<n; y++){
       if(v[x]==v[y]){
         cout << x;
         break;
