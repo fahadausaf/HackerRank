@@ -1,22 +1,20 @@
 object Solution {
-  def pascalTriangle() {
-    val k = io.Source.stdin.bufferedReader().readLine().toInt
+  def pascalsTriangle() = {
+    def pascal(c: Int, r: Int): Int =
+      if (c == r || c == 0 || r == 0) 1
+      else pascal(c - 1, r - 1) + pascal(c, r - 1)
 
-    (0 until k).foreach {
-      row =>
-        println(List.range(0, row + 1)
-          .map(col =>
-            fact(row) / (fact(col) * fact(row - col)))
-          .mkString(" "))
-    }
+    var scanner = new Scanner(System.in)
+    val n = scanner.nextInt()
 
-    def fact(n: Int): Int = {
-      if (n <= 1) 1
-      else n * fact(n - 1)
+    for (row <- 0 until n) {
+      for (col <- 0 to row)
+        print(pascal(col, row) + " ")
+      println()
     }
   }
 
   def main(args: Array[String]) {
-    pascalTriangle()
+    pascalsTriangle()
   }
 }
