@@ -3,16 +3,12 @@
 using namespace std;
 
 int main(){
-  string tmp;
   double mealCost;
   int tipPercent, taxPercent;
 
-  getline(cin, tmp);
-  mealCost = stod(tmp);
-  getline(cin, tmp);
-  tipPercent = stoi(tmp);
-  getline(cin, tmp);
-  taxPercent = stoi(tmp);
+  cin >> mealCost;
+  cin >> tipPercent;
+  cin >> taxPercent;
 
   double tip = mealCost * tipPercent / 100;
   double tax = mealCost * taxPercent / 100;

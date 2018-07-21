@@ -8,8 +8,8 @@ int main(){
 
   int n1 = str1.size();
   int n2 = str2.size();
-  char c1[n1+1];
-  char c2[n2+1];
+  char c1[n1];
+  char c2[n2];
   strcpy(c1, str1.c_str());
   strcpy(c2, str2.c_str());
   char tmp = c1[0];
@@ -19,10 +19,6 @@ int main(){
   cout << n1 << " " << n2 << endl;
   cout << str1+str2 << endl;
   cout << c1 << " " << c2;
-
-  /*
-  This is a sample change
-  */
 
   return 0;
 }

@@ -18,7 +18,6 @@ vector<int> parseInts(string str){
   return v;
 }
 
-
 int main(){
   string str;
   cin >> str;

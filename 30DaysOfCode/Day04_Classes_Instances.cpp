@@ -14,17 +14,17 @@ Person::Person(int initialAge){
     age = initialAge;
   else{
     age = 0;
-    std::cout << "Age is not valid, setting age to 0." << '\n';
+    cout << "Age is not valid, setting age to 0." << endl;
   }
 }
 
 void Person::amIOld(){
   if(age < 13)
-    std::cout << "You are young." << '\n';
+    cout << "You are young." << '\n';
   else if(age >= 13 && age < 18)
-    std::cout << "You are a teenager." << '\n';
+    cout << "You are a teenager." << '\n';
   else
-    std::cout << "You are old." << '\n';
+    cout << "You are old." << '\n';
 }
 
 void Person::yearPasses(){

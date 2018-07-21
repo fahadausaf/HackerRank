@@ -9,20 +9,22 @@ int main() {
     cin >> a;
     cin >> b;
 
-    for (int x = a; x <= b; x++){
-        if(x==1) cout << "one" << endl;
-        if(x==2) cout << "two" << endl;
-        if(x==3) cout << "three" << endl;
-        if(x==4) cout << "four" << endl;
-        if(x==5) cout << "five" << endl;
-        if(x==6) cout << "six" << endl;
-        if(x==7) cout << "seven" << endl;
-        if(x==8) cout << "eight" << endl;
-        if(x==9) cout << "nine" << endl;
-        if(x>9){
-            if(x%2==0) cout << "even" << endl;
-            else cout << "odd" << endl;
+    for(int i=a; i<=b; i++){
+      switch (i){
+        case(1): cout << "one\n"; break;
+        case(2): cout << "two\n"; break;
+        case(3): cout << "three\n"; break;
+        case(4): cout << "four\n"; break;
+        case(5): cout << "five\n"; break;
+        case(6): cout << "six\n"; break;
+        case(7): cout << "seven\n"; break;
+        case(8): cout << "eight\n"; break;
+        case(9): cout << "nine\n"; break;
+        default: {
+          if(i%2==0) cout << "even\n";
+          else cout << "odd\n";
         }
+      }
     }
     return 0;
 }
