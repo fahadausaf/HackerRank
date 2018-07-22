@@ -1,0 +1,4 @@
+C:\GitHub\HackerRank\cpp\STL\Lower_Bound_STL.cpp: In function 'int main()':
+C:\GitHub\HackerRank\cpp\STL\Lower_Bound_STL.cpp:21:51: error: cannot convert '__gnu_cxx::__normal_iterator<int*, std::vector<int> >' to 'int' in initialization
+     int index = lower_bound (v.begin(), v.end(), x);// - v.begin();
+                                                   ^

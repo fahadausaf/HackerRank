@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 void inputAndInput(){
@@ -135,6 +136,71 @@ void stringStream(){
   }
 }
 
+void vectorSort(){
+  int n = 0;
+  cin >> n;
+  vector<int> v;
+  int temp;
+
+  for(int i=0; i<n; i++){
+    cin >> temp;
+    v.push_back(temp);
+  }
+
+  sort(v.begin(), v.end());
+
+  for(int i=0; i<n; i++){
+    cout << v[i] << " ";
+  }
+}
+
+void vectorErase(){
+  vector<int> v;
+  int n, x, a, b;
+  cin >> n;
+  int temp;
+  for(int i=0; i<n; i++){
+    cin >> temp;
+    v.push_back(temp);
+  }
+
+  cin >> x >> a >> b;
+  v.erase(v.begin()+x-1);
+
+  v.erase(v.begin()+a-1, v.begin()+b-1);
+
+  cout << v.size() << endl;
+  for(int i=0; i<v.size(); i++){
+    cout << v[i] << " ";
+  }
+}
+
+void lowerBound(){
+  int n;
+  cin >> n;
+  vector<int> v;
+  for(int i=0; i<n; i++){
+    int tmp;
+    cin >> tmp;
+    v.push_back(tmp);
+  }
+
+  cin >> n;
+  while (n--) {
+    int x;
+    cin >> x;
+    int index = lower_bound (v.begin(), v.end(), x) - v.begin();
+    cout << index;
+
+    if (v[index] == x)
+      cout << "Yes ";
+    else
+      cout << "No ";
+
+    cout << index + 1 << endl;
+  }
+}
+
 int main(){
   cout << "Hacker Rank\n-----------" << endl;
 
@@ -144,7 +210,10 @@ int main(){
   //forLoop();
   //arrayIntroduction();
   //variableSizedArrays();
-  stringStream();
+  //stringStream();
+  //vectorSort();
+  //vectorErase();
+  lowerBound();
 
   return 0;
 }
