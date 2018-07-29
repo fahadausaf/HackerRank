@@ -5,34 +5,36 @@
 #include <algorithm>
 using namespace std;
 
-vector<int> array_left_rotation(vector<int> a, int n, int k) {
-    k %= n;
-    vector<int> vec(n);
-    for(int i = 0; i < n; i++) {
-        vec[(n+i-k)%n] = a[i];
-    }
-    return vec;
+vector<int> array_left_rotation(vector<int> v, int k) {
+  int n = v.size();
+  k %= n;
+  vector<int> vec(n);
+  for(int i = 0; i < n; i++) {
+      vec[(n+i-k)%n] = v[i];
+  }
+  return vec;
 }
 
-vector<int> array_left_rotation2(vector<int> a, int n, int k) {
-    for(int i=0; i<k; i++){
-      int temp = a[0];
-      for(int j=0; j<n-1; j++)
-        a[j] = a[j+1];
-      a[n-1] = temp;
-    }
-    return a;
+vector<int> array_left_rotation2(vector<int> v, int k) {
+  int n = v.size();
+
+  for(int i=0; i<k; i++){
+    int temp = v[0];
+    for(int j=0; j<n-1; j++)
+      v[j] = v[j+1];
+    v[n-1] = temp;
+  }
+  return v;
 }
 
 int main(){
-    int n;
-    int k;
+    int n, k;
     cin >> n >> k;
-    vector<int> a(n);
-    for(int a_i = 0;a_i < n;a_i++){
-        cin >> a[a_i];
+    vector<int> v(n);
+    for(int i = 0;i < n;i++){
+        cin >> v[i];
     }
-    vector<int> output = array_left_rotation(a, n, k);
+    vector<int> output = array_left_rotation(v, k);
     for(int i = 0; i < n;i++)
         cout << output[i] << " ";
     cout << endl;

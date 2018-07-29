@@ -1,7 +1,7 @@
 Node* Reverse(Node *head)
 {
   Node* current = head;
-  Node *prev, *next = NULL;
+  Node *prev = NULL, *next = NULL;
 
   while(current != NULL){
     next = current->next;
